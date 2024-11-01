@@ -1,0 +1,146 @@
+:root {
+    --primary: #1E1E1E; 
+    --white: #FFFFFF; 
+    --highlight: #FF5722; 
+    --caption-bg: rgba(0, 0, 0, 0.7);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid var(--highlight);
+}
+
+.nav_logo {
+    display: flex;
+    align-items: center; 
+}
+
+.nav_logo img {
+    height: 50px; 
+    margin-right: 10px; 
+}
+
+.nav_links {
+    display: flex;
+    list-style: none;
+    gap: 30px; 
+}
+
+.nav_links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px; 
+    padding: 5px 0; 
+}
+
+.join_button {
+    padding: 10px 20px;
+    background-color: var(--highlight);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.join_button:hover {
+    background-color: var(--white);
+    color: var(--highlight);
+}
+
+main {
+    padding: 40px;
+}
+
+.gallery {
+    text-align: center;
+}
+
+.gallery h2 {
+    color: var(--highlight);
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+}
+
+.gallery-item {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Clip overflow */
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.gallery-img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent sizing */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+}
+
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with transparency */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.lightbox-img {
+    max-width: 90%; /* Responsive */
+    max-height: 80%; /* Responsive */
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    background: var(--caption-bg);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--white);
+    font-size: 40px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Match footer color with navbar */
+    text-align: center;
+    padding: 20px;
+    color: var(--white);
+}
